@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+
+    // Add the Google services Gradle plugin
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.zoom"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.4'
+    def nav_version = "2.5.1"
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:21.1.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation("com.tbuonomo:dotsindicator:4.3")
+    implementation 'com.facebook.android:facebook-android-sdk:latest.release'
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.android.material:material:<version>'
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation "com.quickblox:quickblox-android-sdk-videochat-webrtc:3.9.15"
+    implementation "com.quickblox:quickblox-android-sdk-messages:3.9.15"
+    implementation "com.quickblox:quickblox-android-sdk-chat:3.9.15"
+    implementation "com.quickblox:quickblox-android-sdk-content:3.9.15"
+    implementation 'io.agora.rtc:full-sdk:3.1.0'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation "com.github.johnkil.android-robototextview:robototextview:4.0.0"
+    implementation "com.github.bumptech.glide:glide:3.7.0"
+    implementation 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.android.support:multidex:2.0.1'
+    implementation 'com.github.omadahealth:swipy:1.2.3@aar'
+    implementation 'com.github.orangegangsters:swipy:1.2.3@aar'
+    implementation 'org.jetbrains:annotations:16.0.2'
+    implementation 'androidx.work:work-runtime:2.8.0'
+    implementation 'androidx.browser:browser:1.5.0'
+    //implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.amitshekhar.android:jackson-android-networking:1.0.2'
+}
